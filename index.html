@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/energy-calc.css" media="screen,projection" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <main>
+        <div class="main-container">
+            <div class="energy">
+                <div class="nrg">
+                    <img class="energy-img" src="images/energy.ico" alt="energy" width="10px">
+                    <label>v1.4 от 01.02.2023</label>
+                </div>
+                <label></label>
+            </div>
+            <a href="https://www.donbass-post.ru/" class="margin"><img src="images/logo.png" /></a>
+            <div class="rows">
+                <div class="input-field">
+                    <select id="type">
+                        <option value="" disabled selected>Выберите вид:</option>
+                        <option value="Груз">Груз</option>
+                        <option value="Конверт">Конверт</option>
+                    </select>
+                    <label>Вид груза:</label>
+                </div>
+            </div>
+            <div class="rows">
+                <div class="input-field">
+                    <select id="city">
+                        <option value="" disabled selected>Выберите город:</option>
+                        <option value="Донецк">Донецк</option>
+                        <option value="Макеевка">Макеевка</option>
+                        <option value="Горловка">Горловка</option>
+                        <option value="Енакиево">Енакиево</option>
+                        <option value="Шахтерск">Шахтерск</option>
+                        <option value="Снежное">Снежное</option>
+                        <option value="Алчевск">Алчевск</option>
+                        <option value="Луганск">Луганск</option>
+                        <option value="Стаханов">Стаханов</option>
+                        <option value="Мариуполь">Мариуполь</option>
+                        <option value="Бердянск">Бердянск</option>
+                    </select>
+                    <label>Город:</label>
+                </div>
+            </div>
+            <div class="rows">
+                <form>
+                    <div class="input-field">
+                        <input placeholder="Введите вес, кг" id="weight" type="text" class="validate decimal"
+                            onblur="CheckWeight(); CheckInputs();" onfocus="CheckWeight(); CheckInputs();"
+                            onchange="CheckWeight(); CheckInputs();">
+                        <label for="first_name">Вес, кг:</label>
+                        <span class="helper-text" data-error="Введено неверное значение!"></span>
+                    </div>
+                    <div class="input-field">
+                        <input placeholder="Введите объём, м3" id="volume" type="text" class="validate"
+                            onblur="CheckVolume(); CheckInputs();" onfocus="CheckVolume(); CheckInputs();"
+                            onchange="CheckVolume(); CheckInputs();">
+                        <label for="first_name">Объём, м3:</label>
+                        <span class="helper-text" data-error="Введено неверное значение!"></span>
+                    </div>
+                </form>
+            </div>
+            <a class="waves-effect waves-light btn red button" id="result-btn" onclick="GetResult()">Рассчитать</a>
+            <div class="rows">
+                <div class="amount">
+                    <span class="span-2">Итого:</span>
+                    <span id="result-field" class="span-1">0 р</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/jquery-3.4.0.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/energy-calc.js"></script>
+</body>
+
+</html>
