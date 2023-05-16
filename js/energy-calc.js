@@ -72,6 +72,9 @@ $("#city").on('change', function () {
         case "Бердянск":
             currentZone = "West";
             break;
+        case "Мелитополь":
+            currentZone = "West";
+            break;
     }
 });
 
